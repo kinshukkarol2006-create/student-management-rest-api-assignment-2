@@ -1,0 +1,16 @@
+{
+  "name": "student-management-rest-api",
+  "version": "1.0.0",
+  "description": "In-memory student management REST API built with Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
