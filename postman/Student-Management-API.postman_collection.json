@@ -1,0 +1,58 @@
+{
+  "info": {
+    "_postman_id": "5b823fa9-2837-4e4d-9b1e-93c3e3b91a51",
+    "name": "Student Management REST API",
+    "description": "CRUD requests for the in-memory Student Management API. Start the server before sending requests.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get all students",
+      "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] } }
+    },
+    {
+      "name": "Get student by ID",
+      "request": { "method": "GET", "header": [], "url": { "raw": "{{baseUrl}}/api/students/1", "host": ["{{baseUrl}}"], "path": ["api", "students", "1"] } }
+    },
+    {
+      "name": "Create student",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{
+  \"name\": \"Sam Lee\",
+  \"age\": 21,
+  \"course\": \"Web Development\"
+}", "options": { "raw": { "language": "json" } } },
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    },
+    {
+      "name": "Update student 1",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{
+  \"name\": \"Aarav Sharma\",
+  \"age\": 21,
+  \"course\": \"Software Engineering\"
+}", "options": { "raw": { "language": "json" } } },
+        "url": { "raw": "{{baseUrl}}/api/students/1", "host": ["{{baseUrl}}"], "path": ["api", "students", "1"] }
+      }
+    },
+    {
+      "name": "Delete student 1",
+      "request": { "method": "DELETE", "header": [], "url": { "raw": "{{baseUrl}}/api/students/1", "host": ["{{baseUrl}}"], "path": ["api", "students", "1"] } }
+    },
+    {
+      "name": "Validation error example",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\"name\": \"\", \"age\": 0, \"course\": \"\"}", "options": { "raw": { "language": "json" } } },
+        "url": { "raw": "{{baseUrl}}/api/students", "host": ["{{baseUrl}}"], "path": ["api", "students"] }
+      }
+    }
+  ],
+  "variable": [{ "key": "baseUrl", "value": "http://localhost:3000" }]
+}
